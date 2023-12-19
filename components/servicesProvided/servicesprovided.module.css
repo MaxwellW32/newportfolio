@@ -1,0 +1,24 @@
+.servicesMainDiv {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.servicesMainDiv>div {
+    flex: 0 0 300px;
+    display: grid;
+    justify-items: center;
+    gap: 1rem
+}
+
+.servicesMainDiv>div>ul {
+    display: grid;
+    gap: 1rem
+}
+
+.servicesMainDiv>div>ul svg {
+    width: .5rem;
+    display: inline;
+    margin-right: .2rem;
+}

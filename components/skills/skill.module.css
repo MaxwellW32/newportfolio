@@ -1,0 +1,25 @@
+.skillMainDiv {
+    background-color: var(--backgroundColor);
+    display: grid;
+    gap: 2rem;
+    position: relative;
+}
+
+
+.progressBar {
+    animation: animateIn 1s;
+    transform-origin: left;
+}
+
+@keyframes animateIn {
+    0% {
+        transform: scaleX(0);
+    }
+
+
+    100% {
+        transform: scaleX(1);
+
+    }
+
+}

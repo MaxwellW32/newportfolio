@@ -3,17 +3,18 @@
 @tailwind utilities;
 
 :root {
-  --backgroundColor: #252734;
+  --primaryColor: #252734;
+  --backgroundColor: #2a2c39;
 
   /* text sizes */
   --extraLargeFontSize: 3rem;
   --largeFontSize: 2rem;
-  --mediumFontSize: 1.5rem;
+  --mediumFontSize: 1.3rem;
   --regularFontSize: 1rem;
 }
 
 html {
-  background-color: var(--backgroundColor);
+  background-color: var(--primaryColor);
   color: #fff;
 }
 
@@ -42,6 +43,12 @@ button {
   align-items: center;
   gap: 1rem;
   text-transform: capitalize;
+  background-color: var(--primaryColor);
+  transition: filter 400ms;
+}
+
+button:hover {
+  filter: brightness(1.3);
 }
 
 svg {
@@ -72,7 +79,12 @@ h1 {
 
 h2 {
   font-size: var(--mediumFontSize);
-  font-weight: bold;
+  opacity: .8;
+}
+
+h2::before {
+  content: "||";
+  margin-right: .5rem;
 }
 
 h3 {

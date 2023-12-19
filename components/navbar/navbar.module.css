@@ -10,6 +10,7 @@
         top: 0;
         background-color: var(--primaryColor);
         z-index: 999;
+        padding: 1rem;
     }
 
 
@@ -39,6 +40,7 @@
         padding: 1rem;
         display: inline-block;
         position: relative;
+        z-index: 1;
     }
 
     .mainMenuItem>a::before {
@@ -48,10 +50,10 @@
         position: absolute;
         top: 0;
         left: 0;
-        z-index: -1;
         background-image: url('../../public/squigglyBg.webp');
         background-position: center;
-        background-size: cover;
+        background-size: contain;
+        background-repeat: no-repeat;
         opacity: 0;
         transition: opacity 400ms;
     }

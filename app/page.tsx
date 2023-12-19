@@ -67,7 +67,7 @@ export default function Page() {
             </a>
           </article>
 
-          <div>
+          <div style={{ display: "grid", gap: "1rem" }}>
             <Skill title={`communication`} amount={`95%`} />
             <Skill title={`Leadership`} amount={`80%`} />
             <Skill title={`Teamwork`} amount={`95%`} />

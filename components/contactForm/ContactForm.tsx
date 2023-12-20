@@ -146,9 +146,9 @@ export default function ContactForm() {
         <div>
             <div style={{ padding: "1rem", color: "pink", marginBottom: "1rem" }}>
                 {Object.values(formObjErrors).map(eachResult => {
-                    return eachResult?.map(eachErr => {
+                    return eachResult?.map((eachErr, eachErrIndex) => {
                         return (
-                            <p>{eachErr}</p>
+                            <p key={eachErrIndex}>{eachErr}</p>
                         )
                     })
                 })}

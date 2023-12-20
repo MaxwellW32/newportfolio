@@ -10,8 +10,8 @@ export type blog = {
 export const blogs: blog[] = [
     {
         image: require(`@/public/blog1image.webp`).default.src,
-        category: "Html",
-        datePosted: new Date("2015-03-25"),
+        category: "html",
+        datePosted: new Date("2022-03-25"),
         title: "Don't wait until you officially started business to line these up.",
         slug: "html-practice",
         messages: [
@@ -22,16 +22,16 @@ export const blogs: blog[] = [
     },
     {
         image: require(`@/public/blog2image.webp`).default.src,
-        category: "Html",
+        category: "html",
         datePosted: new Date("2015-03-25"),
         title: "Don't wait until you officially started business to line these up.",
         slug: "html-practice0"
     },
     {
         image: require(`@/public/blog3image.webp`).default.src,
-        category: "Html",
+        category: "html",
         datePosted: new Date("2015-03-25"),
         title: "Don't wait until you officially started business to line these up.",
         slug: "html-practice1"
-    }
+    },
 ]

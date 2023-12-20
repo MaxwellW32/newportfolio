@@ -71,7 +71,7 @@
     .subMenuItem {
         padding: 1rem;
         position: relative;
-        transition: color 1s;
+        transition: color 600ms;
     }
 
     .subMenuItem>a {
@@ -97,7 +97,7 @@
         left: 0;
         background-color: #fff;
         transform: scaleX(0);
-        transition: transform 1s;
+        transition: transform 400ms;
         transform-origin: right;
     }
 

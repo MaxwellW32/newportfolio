@@ -1,3 +1,4 @@
+import BackToTopBttn from "@/components/backToTopButton/BackToTopBttn";
 import BlogPosts from "@/components/blogPosts/BlogPosts";
 import MyMetrics from "@/components/myMetrics/MyMetrics";
 import MyProjects from "@/components/myProjects/MyProjects";
@@ -8,7 +9,7 @@ import TrustedCompanies from "@/components/trustedCompanies/TrustedCompanies";
 import Image from "next/image";
 import Link from "next/link";
 
-export default function Page() {
+export default function page() {
   return (
     <main>
       <section>
@@ -49,7 +50,7 @@ export default function Page() {
       </section>
 
       <section style={{ backgroundColor: "var(--backgroundColor)" }}>
-        <h2>My Services</h2>
+        <h2 id="services">My Services</h2>
 
         <p style={{ marginBottom: "1rem" }} className="extraLargeText">Services I Provide For My Clients.</p>
 
@@ -98,7 +99,7 @@ export default function Page() {
       </section>
 
       <section style={{ backgroundColor: "var(--backgroundColor)" }} >
-        <h2>Awesome Portfolio</h2>
+        <h2 id="projects">Awesome Portfolio</h2>
 
         <p className='extraLargeText'>My Complete Projects</p>
 
@@ -125,9 +126,11 @@ export default function Page() {
 
           <p style={{ marginBlock: "2rem" }} className="extraLargeText">Latest Tips & Tricks</p>
 
-          <BlogPosts inPreviewMode={true} />
+          <BlogPosts inPreviewMode={true} limit={3} />
         </div>
       </section>
+
+      <BackToTopBttn />
     </main>
   )
 }

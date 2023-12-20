@@ -4,6 +4,7 @@ import './globals.css'
 import Navbar from '@/components/navbar/Navbar'
 import AtomLoader from '@/utility/AtomLoader'
 import { Toaster } from 'react-hot-toast'
+import Footer from '@/components/footer/Footer'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -27,6 +28,7 @@ export default function RootLayout({
           reverseOrder={false}
         />
         {children}
+        <Footer />
       </body>
     </html>
   )

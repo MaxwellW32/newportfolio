@@ -21,47 +21,43 @@ export default function Navbar() {
     const mainMenuItems: mainMenuItem[] = [
         {
             title: "home",
-            link: "",
+            link: "/",
         },
         {
             title: "service",
-            link: "",
+            link: "/#services",
             subMenu: [
                 {
-                    title: "services",
-                    link: ""
-                },
-                {
                     title: "service details",
-                    link: ""
+                    link: "/serviceDetails"
                 }
             ]
         },
         {
             title: "blog",
-            link: "",
+            link: "/blog",
             subMenu: [
                 {
                     title: "html",
-                    link: ""
+                    link: "/blog/category/html"
                 },
                 {
                     title: "css",
-                    link: ""
+                    link: "/blog/category/css"
                 },
                 {
                     title: "javascript",
-                    link: ""
+                    link: "/blog/category/javascript"
                 },
                 {
                     title: "next",
-                    link: ""
+                    link: "/blog/category/next"
                 },
             ]
         },
         {
             title: "projects",
-            link: "",
+            link: "/#projects",
             subMenu: [
                 {
                     title: "storytime",
@@ -83,7 +79,7 @@ export default function Navbar() {
         },
         {
             title: "contact",
-            link: "",
+            link: "/contactUs",
         }
     ]
 
@@ -104,7 +100,9 @@ export default function Navbar() {
 
     return (
         <nav className={styles.navBar}>
-            <Image alt='logo' src={require(`@/public/logo.webp`).default.src} height={55} width={171} style={{}} />
+            <Link href={`/`}>
+                <Image alt='logo' src={require(`@/public/logo.webp`).default.src} height={55} width={171} style={{}} />
+            </Link>
 
             <div style={{ display: !screenSize.desktop ? "grid" : "none", justifyItems: "center" }} className={styles.mobileNavSvgBttnCont} onClick={() => { mainMenuShowingSet(prev => !prev) }}>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"
@@ -150,10 +148,12 @@ export default function Navbar() {
                 })}
             </ul>
 
-            <button>
-                Hire Me
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M470.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L402.7 256 265.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160zm-352 160l160-160c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L210.7 256 73.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0z" /></svg>
-            </button>
+            <Link href={`/contactUs`}>
+                <button>
+                    Hire Me
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M470.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L402.7 256 265.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160zm-352 160l160-160c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L210.7 256 73.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0z" /></svg>
+                </button>
+            </Link>
         </nav>
     )
 }

@@ -1,0 +1,19 @@
+.testimonial {
+    animation: moveIn 1s both;
+}
+
+
+@keyframes moveIn {
+    0% {
+        translate: 10vw -3vh;
+        scale: .8;
+        opacity: 0;
+    }
+
+    100% {
+        scale: 1;
+        opacity: 1;
+        translate: 0 0;
+    }
+
+}

@@ -8,17 +8,16 @@
 
 
 .progressBar {
-    animation: animateIn 1s;
     transform-origin: left;
+    transform: scaleX(0);
+}
+
+.animateIn {
+    animation: animateIn 1s forwards;
 }
 
 @keyframes animateIn {
-    0% {
-        transform: scaleX(0);
-    }
-
-
-    100% {
+    to {
         transform: scaleX(1);
 
     }

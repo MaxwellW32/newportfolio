@@ -94,7 +94,6 @@ export default function Navbar() {
 
         mainMenuItems.forEach((each, eachItemIndex) => {
             if (each.subMenu !== undefined) {
-                console.log(`$seen with submenu`, each.title);
                 newObj[eachItemIndex] = false
             }
         })

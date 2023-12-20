@@ -1,6 +1,6 @@
 import BlogPosts from '@/components/blogPosts/BlogPosts'
 
-export default function page() {
+export default function Page() {
     return (
         <BlogPosts inPreviewMode={true} />
     )

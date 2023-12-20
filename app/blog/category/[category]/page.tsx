@@ -2,7 +2,7 @@ import Blog from '@/components/blog/Blog';
 import { blogs } from '@/lib/BlogData';
 import React from 'react'
 
-export default function page({ params: { category } }: { params: { category: string } }) {
+export default function Page({ params: { category } }: { params: { category: string } }) {
 
     const foundFittingArr = blogs.filter(eachBlog => eachBlog.category === category)
 

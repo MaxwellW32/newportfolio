@@ -2,8 +2,9 @@
 import React, { useRef, useState } from 'react'
 import styles from "./page.module.css"
 import Image from 'next/image'
+import TrustedCompanies from '@/components/trustedCompanies/TrustedCompanies';
 
-export default function page() {
+export default function Page() {
     type categoryInfo = {
         name: string,
         title: string,
@@ -78,9 +79,9 @@ export default function page() {
                     <div className={styles.mainTextArea} style={{ flex: "99999 1 400px" }}>
                         <Image alt={`${categoryInfo[category].name}image`} src={categoryInfo[category].imageSrc} width={659} height={439} />
 
-                        <h2 id='headStart' ref={headingRef} style={{ marginTop: "1rem" }}>{categoryInfo[category].name}</h2>
+                        <h2 ref={headingRef} style={{ marginTop: "1rem" }}>{categoryInfo[category].name}</h2>
 
-                        <p className={`${styles.extraLargeText} extraLargeText`}>{categoryInfo[category].title}</p>
+                        <p className="extraLargeText">{categoryInfo[category].title}</p>
 
                         {categoryInfo[category].elements?.map(eachEl => {
                             return eachEl
@@ -108,6 +109,10 @@ export default function page() {
                         </div>
 
                         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsam, consectetur amet pariatur fugit aut nam mollitia officia exercitationem. Eaque molestiae quia repellendus mollitia saepe in necessitatibus adipisci doloremque temporibus asperiores.</p>
+
+
+                        <p className="extraLargeText">My Service Planning</p>
+
                     </div>
 
                     <div style={{ flex: "1 0 auto" }}>
@@ -164,6 +169,16 @@ export default function page() {
                             </ul>
                         </div>
                     </div>
+                </div>
+            </section>
+
+            <section style={{ backgroundColor: "var(--backgroundColor)" }}>
+                <div style={{ display: "grid" }}>
+                    <h2>Favourite Clients</h2>
+
+                    <p style={{ marginBlock: "2rem" }} className="extraLargeText">Work With Trusted Companies.</p>
+
+                    <TrustedCompanies />
                 </div>
             </section>
         </main>

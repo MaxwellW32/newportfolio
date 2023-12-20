@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import Navbar from '@/components/navbar/Navbar'
 import AtomLoader from '@/utility/AtomLoader'
+import { Toaster } from 'react-hot-toast'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -21,6 +22,10 @@ export default function RootLayout({
       <body className={inter.className}>
         <AtomLoader />
         <Navbar />
+        <Toaster
+          position="top-center"
+          reverseOrder={false}
+        />
         {children}
       </body>
     </html>

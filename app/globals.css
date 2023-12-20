@@ -85,7 +85,6 @@ section {
 .extraLargeText {
   font-size: var(--extraLargeFontSize);
   font-weight: bold;
-
 }
 
 h1 {
@@ -94,7 +93,7 @@ h1 {
 }
 
 h2 {
-  /* font-size: var(--mediumFontSize); */
+  font-size: var(--mediumFontSize);
   opacity: .8;
 }
 

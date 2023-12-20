@@ -1,8 +1,10 @@
+import BlogPosts from "@/components/blogPosts/BlogPosts";
 import MyMetrics from "@/components/myMetrics/MyMetrics";
 import MyProjects from "@/components/myProjects/MyProjects";
 import ServicesProvided from "@/components/servicesProvided/ServicesProvided";
 import Skill from "@/components/skills/Skill";
 import Testimonials from "@/components/testimonials/Testimonials";
+import TrustedCompanies from "@/components/trustedCompanies/TrustedCompanies";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -105,6 +107,26 @@ export default function Page() {
 
       <section>
         <Testimonials />
+      </section>
+
+      <section style={{ backgroundColor: "var(--backgroundColor)" }}>
+        <div style={{ display: "grid" }}>
+          <h2>Favourite Clients</h2>
+
+          <p style={{ marginBlock: "2rem" }} className="extraLargeText">Work With Trusted Companies.</p>
+
+          <TrustedCompanies />
+        </div>
+      </section>
+
+      <section style={{ backgroundColor: "var(--backgroundColor)" }}>
+        <div style={{ display: "grid", justifyItems: "center" }}>
+          <h2>Blog Post</h2>
+
+          <p style={{ marginBlock: "2rem" }} className="extraLargeText">Latest Tips & Tricks</p>
+
+          <BlogPosts inPreviewMode={true} />
+        </div>
       </section>
     </main>
   )

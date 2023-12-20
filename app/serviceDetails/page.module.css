@@ -50,3 +50,30 @@
 .mainTextArea p {
     margin-block: 1rem;
 }
+
+
+
+.pricingCont {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 300px));
+    gap: 1rem;
+    justify-content: center;
+}
+
+.pricingCont>div {
+    background-color: var(--primaryColor);
+    padding: 4rem 3rem;
+    display: grid;
+    justify-items: center;
+    gap: 1rem;
+}
+
+.pricingCont>div>* {
+    margin: 0;
+}
+
+.pricingCont>div>ul {
+    opacity: .7;
+    display: grid;
+    gap: .2rem
+}

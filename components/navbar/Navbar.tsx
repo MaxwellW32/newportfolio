@@ -22,6 +22,16 @@ export default function Navbar() {
         {
             title: "home",
             link: "/",
+            subMenu: [
+                {
+                    title: "about us",
+                    link: "/aboutUs"
+                },
+                {
+                    title: "FAQ",
+                    link: "/FAQ"
+                },
+            ]
         },
         {
             title: "service",

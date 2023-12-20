@@ -113,6 +113,40 @@ export default function Page() {
 
                         <p className="extraLargeText">My Service Planning</p>
 
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, quam! Sint explicabo cumque ipsa ratione deleniti similique quae incidunt! Beatae tempore adipisci vel deserunt officiis similique dolorum voluptatem eaque reprehenderit!</p>
+
+                        <div className={styles.pricingCont}>
+                            <div>
+                                <h3>Basic</h3>
+                                <p className='extraLargeText'>$90</p>
+                                <p>/mo</p>
+
+                                <ul>
+                                    <li>01 Landing page</li>
+                                    <li>08 Inner page</li>
+                                    <li>03 Months support</li>
+                                    <li>04 Revision</li>
+                                </ul>
+
+                                <button>Get Started</button>
+                            </div>
+
+                            <div>
+                                <h3>Standard</h3>
+                                <p className='extraLargeText'>$100</p>
+                                <p>/mo</p>
+
+                                <ul>
+                                    <li>03 Landing Page</li>
+                                    <li>18 Inner page</li>
+                                    <li>07 Months support</li>
+                                    <li>Unlimited Revision</li>
+                                </ul>
+
+                                <button>Get Started</button>
+                            </div>
+                        </div>
+
                     </div>
 
                     <div style={{ flex: "1 0 auto" }}>

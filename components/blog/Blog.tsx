@@ -33,13 +33,7 @@ export default function Blog({
 
         {!inPreview && messages !== undefined && (
           <div>
-            {messages.map((eachMessage, eachMessageIndex) => {
-              return (
-                <React.Fragment key={eachMessageIndex}>
-                  {eachMessage}
-                </React.Fragment>
-              )
-            })}
+            {messages.map((eachMessage, eachMessageIndex) => eachMessage)}
           </div>
         )}
       </div>

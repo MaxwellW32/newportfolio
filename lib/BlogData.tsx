@@ -15,9 +15,9 @@ export const blogs: blog[] = [
         title: "Don't wait until you officially started business to line these up.",
         slug: "html-practice",
         messages: [
-            <p>Hey there message 1</p>,
-            <p>Hey there message 2</p>,
-            <p>Hey there message 3</p>,
+            <p key={0}>Hey there message 1</p>,
+            <p key={1}>Hey there message 2</p>,
+            <p key={2}>Hey there message 3</p>,
         ]
     },
     {

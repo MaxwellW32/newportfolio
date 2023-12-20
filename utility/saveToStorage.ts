@@ -1,4 +1,3 @@
-
 export function saveToLocalStorage(keyName: any, item: any) {
     localStorage.setItem(keyName, JSON.stringify(item));
 }

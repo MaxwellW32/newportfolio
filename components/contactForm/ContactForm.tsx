@@ -30,39 +30,14 @@ export default function ContactForm() {
         message: ""
     }
 
-    const [formObj, formObjSet] = useState<contactForm>(() => {
-        const prevForm = retreiveFromLocalStorage("form")
-
-        if (prevForm === null) {
-            return { ...initialFormObj }
-        }
-
-        return prevForm
-    })
+    const [formObj, formObjSet] = useState<contactForm>({ ...initialFormObj })
 
     const [userInteracted, userInteractedSet] = useState(false)
 
     const [formObjErrors, formObjErrorsSet] = useState(() => {
-        const seenForm = retreiveFromLocalStorage("form")
-        let formBlank = false
-
-        if (seenForm !== null) {
-            const isBlank = Object.values(seenForm).filter(eachVal => eachVal !== "") as string[]
-            if (isBlank.length === 0) {
-                formBlank = true
-            }
-        }
-        let seenPrevData = seenForm !== null && !formBlank ? true : false
-
         const newObj: { [key: string]: string[] | null } = {}
-
         Object.entries(formObj).forEach(eachEntry => {
-            if (seenPrevData) {
-                const test = contactFormSchema.pick({ [eachEntry[0]]: true }).safeParse(formObj)
-                newObj[eachEntry[0]] = test.success ? null : test.error.issues.map(eachIssue => eachIssue.message)
-            } else {
-                newObj[eachEntry[0]] = null
-            }
+            newObj[eachEntry[0]] = null
         })
 
         return newObj
@@ -75,6 +50,7 @@ export default function ContactForm() {
             toast.error("Form Error Seen")
             return
         }
+
 
         const result = await emailjs.sendForm(
             `service_i29q1eu`,
@@ -134,6 +110,35 @@ export default function ContactForm() {
         }
     }
 
+    //read errors
+    useEffect(() => {
+        const prevForm = retreiveFromLocalStorage("form")
+
+        let formBlank = false
+        if (prevForm !== null) {
+            formObjSet(prevForm)
+
+            const isBlank = Object.values(prevForm).filter(eachVal => eachVal !== "") as string[]
+            if (isBlank.length === 0) {
+                formBlank = true
+            }
+
+            if (!formBlank) {
+                formObjErrorsSet(() => {
+                    const newObj: { [key: string]: string[] | null } = {}
+
+                    Object.entries(prevForm).forEach(eachEntry => {
+                        const test = contactFormSchema.pick({ [eachEntry[0]]: true }).safeParse(prevForm)
+                        newObj[eachEntry[0]] = test.success ? null : test.error.issues.map(eachIssue => eachIssue.message)
+                    })
+
+                    return newObj
+                })
+            }
+        }
+
+    }, [])
+
     //save changes to broswer
     useEffect(() => {
         if (userInteracted) {
@@ -141,6 +146,7 @@ export default function ContactForm() {
             console.log(`$saved again`);
         }
     }, [formObj, userInteracted])
+
 
     return (
         <div>

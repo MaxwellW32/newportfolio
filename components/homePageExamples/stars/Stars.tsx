@@ -43,7 +43,7 @@ export default function Stars() {
     const scrollCont = useRef<HTMLDivElement>(null)
 
     return (
-        <div ref={scrollCont} className={`${styles.mountainMainDiv} ${roboto_mono.variable} ${comin_nue.variable} niceScrollbar`} style={{ backgroundColor: "#000", overflowY: "auto", display: "grid", gridAutoRows: "100%", }}>
+        <div ref={scrollCont} className={`${styles.starsMainDiv} ${roboto_mono.variable} ${comin_nue.variable}`} style={{ backgroundColor: "#000", overflowY: "auto", display: "grid", gridAutoRows: "80vh", }}>
             <div ref={wormParent} style={{ overflow: "hidden", position: "relative", backgroundImage: `url(${require("@/public/homePageExamples/stars/mountain.png").default.src})`, backgroundSize: "cover", display: "grid", gridTemplateRows: "1fr" }}
                 onMouseMove={(e) => {
                     boardInfo.current!.mouseX = e.clientX - wormParent.current!.offsetLeft
@@ -56,26 +56,10 @@ export default function Stars() {
                     boardInfo.current!.maxWidth = wormParent.current!.offsetWidth
                     boardInfo.current!.maxHeight = wormParent.current!.offsetHeight
                 }}>
-                {boardInfo.current && new Array(10).fill(0).map((eachItem, eachItemIndex) => {
+                {boardInfo.current && new Array(20).fill(0).map((eachItem, eachItemIndex) => {
                     return <Worm key={eachItemIndex} boardInfo={boardInfo.current} />
                 })}
-
-                <div style={{ display: "flex", flexDirection: "column", position: "relative", paddingTop: "12%", justifyContent: "space-between", flex: 1 }}>
-                    <h1>Fancy Title</h1>
-                    <div style={{ backgroundColor: "#000", padding: "1.5rem", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(200px, 100%), 1fr))", gap: "1rem" }}>
-                        <p> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur ullam expedita incidunt ducimus corrupti quae libero odit. Expedita, numquam praesentium amet minima voluptatum repellat provident, excepturi, iusto rerum molestiae blanditiis.</p>
-
-                        <p> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur ullam expedita incidunt ducimus corrupti quae libero odit. Expedita, numquam praesentium amet minima voluptatum repellat provident, excepturi, iusto rerum molestiae blanditiis.</p>
-                    </div>
-                </div>
             </div>
-
-            <article style={{ display: "flex", flexDirection: "column", padding: "1rem" }}>
-                <h2>How it works</h2>
-
-                <h3>onMouseMove</h3>
-                <p>The divs change position randomly on a set interval. if it lands on your mouse it will then react to your current mouse position.</p>
-            </article>
         </div>
     )
 }
@@ -104,7 +88,7 @@ function Worm({ boardInfo }: { boardInfo: boardInfoType | undefined }) {
         }
     }, [])
 
-    const movingInterval = useRef<undefined | NodeJS.Timer>()
+    const movingInterval = useRef<undefined | NodeJS.Timeout>()
     function start() {
         setTimeout(() => {
             canShowSet(true)

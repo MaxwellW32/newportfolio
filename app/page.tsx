@@ -3,11 +3,15 @@ import BlogPosts from "@/components/blogPosts/BlogPosts";
 import MyMetrics from "@/components/myMetrics/MyMetrics";
 import MyProjects from "@/components/myProjects/MyProjects";
 import ServicesProvided from "@/components/servicesProvided/ServicesProvided";
+import ShowHomePageExample from "@/components/showHomePageExample/ShowHomePageExample";
+import ShowMadeWebsite from "@/components/showMadeWebsite/ShowMadeWebsite";
 import Skill from "@/components/skills/Skill";
 import Socials from "@/components/socials/Socials";
 import Testimonials from "@/components/testimonials/Testimonials";
 import TextChanger from "@/components/textChanger/TextChanger";
 import TrustedCompanies from "@/components/trustedCompanies/TrustedCompanies";
+import { homePageExamples } from "@/lib/HomePageData";
+import { madeWebsites } from "@/lib/MadeWebsitesData";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -48,6 +52,50 @@ export default function page() {
 
         <ServicesProvided />
       </section>
+
+
+
+
+
+
+      <section>
+        <h2>Websites Built</h2>
+
+        <p style={{ marginBottom: "1rem" }} className="extraLargeText">Websites Completed For My Clients.</p>
+
+        <div style={{ display: "grid" }}>
+          <div className="noScrollBar" style={{ display: "grid", gridAutoFlow: "column", gridAutoColumns: "250px", overflowX: "auto", gap: "1rem" }}>
+            {madeWebsites.map((eachWebsite, eachWebsiteIndex) => {
+              return (
+                <ShowMadeWebsite key={eachWebsiteIndex} {...eachWebsite} />
+              )
+            })}
+          </div>
+        </div>
+      </section>
+
+      <section style={{ backgroundColor: "var(--backgroundColor)" }}>
+        <h2>HomePage Examples</h2>
+
+        <p style={{ marginBottom: "1rem" }} className="extraLargeText">See Which Homepage You&apos;ll Fall In Love With.</p>
+
+        <div style={{ display: "grid" }}>
+          <div className="noScrollBar" style={{ display: "grid", gridAutoFlow: "column", gridAutoColumns: "250px", overflowX: "auto", gap: "1rem" }}>
+            {homePageExamples.map((eachHomePageExample, eachHomePageExampleIndex) => {
+              return (
+                <ShowHomePageExample key={eachHomePageExampleIndex} {...eachHomePageExample} />
+              )
+            })}
+          </div>
+        </div>
+      </section>
+
+
+
+
+
+
+
 
       <section>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(250px, 100%), 1fr))", gap: "1rem", alignItems: "center" }}>

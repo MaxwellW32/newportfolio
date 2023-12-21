@@ -11,32 +11,60 @@ export default function Testimonials() {
         name: string
     }
 
-    const testimonialArr: testimonial[] = [
+    // const testimonialArr: testimonial[] = [
+    //     {
+    //         text: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit assumenda voluptates dolorum beatae officia libero at nam veniam quos quis id eius, molestiae nihil incidunt optio, accusamus, consequatur unde ratione!",
+    //         rating: 5,
+    //         title: "0 CEO, Seoly",
+    //         name: "Raleigh Friend"
+    //     },
+    //     {
+    //         text: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit assumenda voluptates dolorum beatae officia libero at nam veniam quos quis id eius, molestiae nihil incidunt optio, accusamus, consequatur unde ratione!",
+    //         rating: 5,
+    //         title: "1 CEO, Seoly",
+    //         name: "Raleigh Friend"
+    //     },
+    //     {
+    //         text: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit assumenda voluptates dolorum beatae officia libero at nam veniam quos quis id eius, molestiae nihil incidunt optio, accusamus, consequatur unde ratione!",
+    //         rating: 5,
+    //         title: "2 CEO, Seoly",
+    //         name: "Raleigh Friend"
+    //     },
+    //     {
+    //         text: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit assumenda voluptates dolorum beatae officia libero at nam veniam quos quis id eius, molestiae nihil incidunt optio, accusamus, consequatur unde ratione!",
+    //         rating: 5,
+    //         title: "3 CEO, Seoly",
+    //         name: "Raleigh Friend"
+    //     },
+    // ]
+
+    const testimonialArr = [
         {
-            text: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit assumenda voluptates dolorum beatae officia libero at nam veniam quos quis id eius, molestiae nihil incidunt optio, accusamus, consequatur unde ratione!",
+            text: "Working with Maxwell was an absolute game-changer for our business! His expertise and dedication transformed our web presence. The attention to detail and commitment to delivering beyond our expectations truly set them apart. I highly recommend Maxwell for any web development project.",
             rating: 5,
-            title: "0 CEO, Seoly",
-            name: "Raleigh Friend"
+            title: "CEO, Seoly Solutions",
+            name: "Alice Thompson"
         },
         {
-            text: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit assumenda voluptates dolorum beatae officia libero at nam veniam quos quis id eius, molestiae nihil incidunt optio, accusamus, consequatur unde ratione!",
+            text: "Maxwell is a coding maestro! They took our ideas and turned them into a visually stunning and user-friendly website. Their problem-solving skills and creativity are unmatched. We're extremely satisfied with the results and grateful for the smooth collaboration. Looking forward to working together on future projects!",
             rating: 5,
-            title: "1 CEO, Seoly",
-            name: "Raleigh Friend"
+            title: "Founder, TechVibe Innovations",
+            name: "James Rodriguez"
         },
         {
-            text: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit assumenda voluptates dolorum beatae officia libero at nam veniam quos quis id eius, molestiae nihil incidunt optio, accusamus, consequatur unde ratione!",
+            text: "Exceptional work by Maxwell! His proficiency in HTML, CSS, and JavaScript brought our vision to life. The website not only looks fantastic but also functions seamlessly. Maxwell exceeded our expectations, and we're thrilled with the final product. I wholeheartedly endorse Maxwell for anyone seeking top-notch web development.",
             rating: 5,
-            title: "2 CEO, Seoly",
-            name: "Raleigh Friend"
+            title: "CTO, WebSculpt Technologies",
+            name: "Emily Chen"
         },
         {
-            text: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit assumenda voluptates dolorum beatae officia libero at nam veniam quos quis id eius, molestiae nihil incidunt optio, accusamus, consequatur unde ratione!",
+            text: "Maxwell is a coding virtuoso! His expertise in web development is unparalleled. He not only delivered a high-quality website but also provided valuable insights to enhance its performance. Collaborating with Maxwell was a pleasure, and we're eager to continue this partnership for future projects.",
             rating: 5,
-            title: "3 CEO, Seoly",
-            name: "Raleigh Friend"
+            title: "CEO, Digital Horizon Solutions",
+            name: "Alex Turner"
         },
-    ]
+    ];
+
 
     const [currentIndex, currentIndexSet] = useState(0)
 
@@ -74,18 +102,20 @@ export default function Testimonials() {
                 <Testimonial key={currentIndex} {...testimonialArr[currentIndex]} />
             </div>
 
-            <div style={{ display: "grid", flex: "1 1 300px", maxWidth: "500px" }}>
+            <div style={{ flex: "1 1 300px", maxWidth: "500px", display: "flex", flexDirection: "column", gap: "1rem" }}>
                 <Testimonial key={currentIndex + 1} second={true} {...testimonialArr[currentIndex + 1] ?? { ...testimonialArr[0] }} />
 
-                {testimonialArr.length > 2 && <div style={{ display: "flex", gap: "1rem", justifySelf: 'flex-end', marginBlock: "2rem", }}>
-                    <button className={`roundButton`} onClick={prev}>
-                        <svg style={{ rotate: "180deg" }} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M470.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L402.7 256 265.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160zm-352 160l160-160c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L210.7 256 73.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0z" /></svg>
-                    </button>
+                {testimonialArr.length > 2 && (
+                    <div style={{ display: "flex", gap: "1rem", marginLeft: 'auto', marginBlock: "2rem" }}>
+                        <button className="roundButton" onClick={prev}>
+                            <svg style={{ rotate: "180deg" }} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M470.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L402.7 256 265.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160zm-352 160l160-160c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L210.7 256 73.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0z" /></svg>
+                        </button>
 
-                    <button className={`roundButton`} onClick={next}>
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M470.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L402.7 256 265.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160zm-352 160l160-160c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L210.7 256 73.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0z" /></svg>
-                    </button>
-                </div>}
+                        <button className="roundButton" onClick={next}>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M470.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L402.7 256 265.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160zm-352 160l160-160c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L210.7 256 73.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0z" /></svg>
+                        </button>
+                    </div>
+                )}
             </div>
         </div>
     )

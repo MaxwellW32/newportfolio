@@ -6,6 +6,7 @@ import Link from 'next/link'
 import { useAtom } from 'jotai'
 import { screenSizeGlobal } from '@/utility/globalState'
 import Logo from '../logo/Logo'
+import { getProjectsForNav } from '@/lib/ProjectsData'
 
 export default function Navbar() {
     const [screenSize] = useAtom(screenSizeGlobal)
@@ -32,6 +33,14 @@ export default function Navbar() {
                     title: "FAQ",
                     link: "/FAQ"
                 },
+                {
+                    title: "Websites",
+                    link: "/websites"
+                },
+                {
+                    title: "Homepage Examples",
+                    link: "/homepages"
+                }
             ]
         },
         {
@@ -75,37 +84,10 @@ export default function Navbar() {
             link: "/#projects",
             subMenu: [
                 {
-                    title: "video download",
-                    link: "/projects/downloader"
+                    title: "all",
+                    link: "/projects/all"
                 },
-                {
-                    title: "random video player",
-                    link: "/projects/randomPlayer"
-                },
-                {
-                    title: "parallax",
-                    link: "/projects/parallax"
-                },
-                {
-                    title: "dictionary",
-                    link: "/projects/dictionary"
-                },
-                {
-                    title: "perspective",
-                    link: "/projects/perspective"
-                },
-                {
-                    title: "decoy calculator",
-                    link: "/projects/calculator"
-                },
-                {
-                    title: "todo app",
-                    link: "/projects/toDo"
-                },
-                {
-                    title: "ecommerce",
-                    link: "/projects/ecommerce"
-                },
+                ...getProjectsForNav()
             ]
         },
         {

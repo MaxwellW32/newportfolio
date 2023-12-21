@@ -32,7 +32,7 @@ export default function TextChanger() {
     ]
 
     const [currentIndex, currentIndexSet] = useState(0)
-    const [loopStarted, loopStartedSet] = useState(true)
+    const [loopStarted, loopStartedSet] = useState(false)
 
     const randomSkilNum = useMemo(() => {
         return Math.floor(Math.random() * headingOptions[currentIndex].skills.length)
@@ -79,7 +79,7 @@ export default function TextChanger() {
     return (
         <>
             {loopStarted ? (
-                <div style={{ display: "flex", gap: ".5rem", alignItems: "center", flexWrap: "wrap" }}>
+                <div style={{ display: "flex", gap: ".5rem", alignItems: "center", flexWrap: "wrap", opacity: loopStarted ? 1 : 0, transition: "opacity 1s" }}>
                     <StartText key={currentIndex} text={headingOptions[currentIndex].title} />
 
                     <MiddleText key={currentIndex + 1} text={" specializing in "} />
@@ -87,7 +87,13 @@ export default function TextChanger() {
                     <EndText key={currentIndex + 2} text={headingOptions[currentIndex].skills[randomSkilNum]} />
                 </div>
             ) : (
-                <p>FullStack Developer specializing in React Js.</p>
+                <div style={{ display: "flex", gap: ".5rem", alignItems: "center", flexWrap: "wrap" }}>
+                    <StartText key={currentIndex} text="FullStack Developer" />
+
+                    <MiddleText key={currentIndex + 1} text={" specializing in "} />
+
+                    <EndText key={currentIndex + 2} text={"React Js"} />
+                </div>
             )}
         </>
     )

@@ -61,6 +61,7 @@ button:disabled {
   border-radius: 50%;
   padding: 2rem;
   opacity: .5;
+  aspect-ratio: 1/1;
   transition: background-color 400ms;
 }
 

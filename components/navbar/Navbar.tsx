@@ -5,6 +5,7 @@ import styles from "./navbar.module.css"
 import Link from 'next/link'
 import { useAtom } from 'jotai'
 import { screenSizeGlobal } from '@/utility/globalState'
+import Logo from '../logo/Logo'
 
 export default function Navbar() {
     const [screenSize] = useAtom(screenSizeGlobal)
@@ -58,6 +59,10 @@ export default function Navbar() {
                 {
                     title: "javascript",
                     link: "/blog/category/javascript"
+                },
+                {
+                    title: "react",
+                    link: "/blog/category/react"
                 },
                 {
                     title: "next",
@@ -126,9 +131,7 @@ export default function Navbar() {
 
     return (
         <nav className={styles.navBar}>
-            <Link href={`/`}>
-                <Image alt='logo' src={require(`@/public/logo.webp`).default.src} height={55} width={171} style={{}} />
-            </Link>
+            <Logo />
 
             <div style={{ display: !screenSize.desktop ? "grid" : "none", justifyItems: "center" }} className={styles.mobileNavSvgBttnCont} onClick={() => { mainMenuShowingSet(prev => !prev) }}>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"

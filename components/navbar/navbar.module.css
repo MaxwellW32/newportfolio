@@ -66,6 +66,12 @@
         display: none;
         position: absolute;
         background-color: var(--primaryColor);
+        max-height: 80vh;
+        overflow-y: auto;
+    }
+
+    .subMenu::-webkit-scrollbar {
+        display: none;
     }
 
     .subMenuItem {

@@ -24,7 +24,7 @@ export default function Blog({
 
   return (
     <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem", padding: "2rem", backgroundColor: "var(--primaryColor)", alignItems: "center", justifyContent: "center" }}>
-      <Image alt={`${category}'s image`} width={200} height={200} src={image} style={{ flex: "0 0 auto" }} />
+      <Image alt={`${category}'s image`} width={200} height={200} src={image} style={{ flex: "0 0 auto", aspectRatio: "1/1", width: "200px", objectFit: "cover" }} />
 
       <div style={{ flex: 1 }}>
         <p style={{ textTransform: "capitalize" }}>{category}<span style={{ paddingInline: "1rem" }}>-</span><span>{datePosted.toDateString()}</span></p>

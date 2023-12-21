@@ -12,9 +12,9 @@ export default function Page() {
         <main style={{}}>
             <section>
                 <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(250px, 100%), 1fr))", gap: "1rem" }}>
-                    {projects.map(eachProject => {
+                    {projects.map((eachProject, eachProjectIndex) => {
                         return (
-                            <ShowProject {...eachProject} imageContWidth='auto' />
+                            <ShowProject key={eachProjectIndex} {...eachProject} imageContWidth='auto' />
                         )
                     })}
                 </div>

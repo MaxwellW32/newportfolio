@@ -13,27 +13,27 @@ export type homePage = {
 
 export const homePageExamples: homePage[] = [
     {
-        image: require(`@/public/blog1image.webp`).default.src,
+        image: require(`@/public/homePageExamples/stars/mountain.png`).default.src,
         category: "Suave",
         title: "Stars",
         slug: "stars",
         seenComponent: <Stars />
     }, {
-        image: require(`@/public/blog2image.webp`).default.src,
+        image: require(`@/public/homePageExamples/companyGraph/cover.png`).default.src,
         category: "Corporate/Data",
         title: "The Graph",
         slug: "theGraph",
         seenComponent: <CompanyGraph />
     },
     {
-        image: require(`@/public/blog2image.webp`).default.src,
+        image: require("@/public/homePageExamples/fashionStore/artsectionbg1.png").default.src,
         category: "Jewellery/Fashion",
         title: "Prized Jewel",
         slug: "prizedJewel",
         seenComponent: <FashionStore />
     },
     {
-        image: require(`@/public/blog2image.webp`).default.src,
+        image: require(`@/public/homePageExamples/pizzaSlice/cheesepizza.png`).default.src,
         category: "Food/Delicacy",
         title: "Pizza Slice",
         slug: "pizzaSlice",

@@ -2,6 +2,7 @@
 import { useEffect, useRef, useState } from "react"
 import styles from "./styles.module.css"
 import Link from "next/link"
+import Image from "next/image"
 
 const colors = {
     primary: "#df4f2d"
@@ -277,7 +278,8 @@ function EachPizzaSlice({ imgSrc, rotation, translateAmt, randomlyPull }: { imgS
 
     return (
         <div className={styles.pizzaSliceFocusPoint} style={{ height: "100%", aspectRatio: "1/1", rotate: `${rotation}deg`, position: "absolute", transform: `translateX(${translateAmt}%)` }}>
-            <img src={imgSrc} className={`${styles.pizzaSlice} ${randomlyPull ? styles.moveSideToSide : ""}`} alt="pizzaSlice" style={{ height: "100%", aspectRatio: "1/1", objectFit: "contain", position: "relative", rotate: "90deg" }} />
+            {/* <img src={imgSrc} className={`${styles.pizzaSlice} ${randomlyPull ? styles.moveSideToSide : ""}`} alt="pizzaSlice" style={{ height: "100%", aspectRatio: "1/1", objectFit: "contain", position: "relative", rotate: "90deg" }} /> */}
+            <Image priority={true} src={imgSrc} width={500} height={500} className={`${styles.pizzaSlice} ${randomlyPull ? styles.moveSideToSide : ""}`} alt="pizzaSlice" style={{ height: "100%", aspectRatio: "1/1", objectFit: "contain", position: "relative", rotate: "90deg" }} />
         </div>
     )
 }

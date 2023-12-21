@@ -9,8 +9,7 @@ export default function ShowProject({ image, title, link, categories }: { image:
             <div style={{ position: "relative", aspectRatio: "1/1", width: "min(400px, 80vw)" }}>
                 <Image alt={`${title}'s cover image`} fill={true} src={image} style={{ objectFit: "cover" }} />
             </div>
-
-            <h1>{title}</h1>
+            <h1>{title}{!link && " - Coming Soon"}</h1>
 
             <p>{categories}</p>
         </Link>

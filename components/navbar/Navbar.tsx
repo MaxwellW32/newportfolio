@@ -70,20 +70,36 @@ export default function Navbar() {
             link: "/#projects",
             subMenu: [
                 {
-                    title: "storytime",
-                    link: ""
+                    title: "video download",
+                    link: "/projects/downloader"
                 },
                 {
-                    title: "studyhall",
-                    link: ""
+                    title: "random video player",
+                    link: "/projects/randomPlayer"
                 },
                 {
-                    title: "disctionary",
-                    link: ""
+                    title: "parallax",
+                    link: "/projects/parallax"
                 },
                 {
-                    title: "video player",
-                    link: ""
+                    title: "dictionary",
+                    link: "/projects/dictionary"
+                },
+                {
+                    title: "perspective",
+                    link: "/projects/perspective"
+                },
+                {
+                    title: "decoy calculator",
+                    link: "/projects/calculator"
+                },
+                {
+                    title: "todo app",
+                    link: "/projects/toDo"
+                },
+                {
+                    title: "ecommerce",
+                    link: "/projects/ecommerce"
                 },
             ]
         },

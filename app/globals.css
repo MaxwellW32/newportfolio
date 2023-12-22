@@ -17,7 +17,7 @@ html {
   background-color: var(--primaryColor);
   color: #fff;
   scroll-behavior: smooth;
-  scroll-padding-top: 7rem;
+  scroll-padding-top: 10rem;
 }
 
 *,

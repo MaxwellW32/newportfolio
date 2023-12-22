@@ -1,16 +1,28 @@
 .servicesMainDiv {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
     gap: 2rem;
+    justify-content: center;
+
 }
 
 .servicesMainDiv>div {
     flex: 0 0 300px;
     display: grid;
-    justify-items: center;
-    gap: 1rem
+    grid-template-rows: auto auto auto;
+    gap: 1rem;
+    align-content: flex-start;
 }
+
+.servicesMainDiv>div>h1 {
+    /* align-self: center; */
+    /* text-align: center; */
+}
+
+.servicesMainDiv>div>img {
+    justify-self: center;
+}
+
 
 .servicesMainDiv>div>ul {
     display: grid;

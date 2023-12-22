@@ -5,12 +5,15 @@ import z from "zod"
 import styles from "./contactform.module.css"
 import { toast } from 'react-hot-toast';
 import { removeFromLocalStorage, retreiveFromLocalStorage, saveToLocalStorage } from '@/utility/saveToStorage';
+import { useSearchParams } from 'next/navigation'
 
 const phoneRegex = new RegExp(
     /^([+]?[\s0-9]+)?(\d{3}|[(]?[0-9]+[)])?([-]?[\s]?[0-9])+$/
 );
 
 export default function ContactForm() {
+    const paramsSearch = useSearchParams()
+    const userInterestedText = paramsSearch.get("planType");
 
     const contactFormSchema = z.object({
         name: z.string().min(1, "Name needs to be at least 1 character"),
@@ -27,10 +30,14 @@ export default function ContactForm() {
         email: "",
         phone: "",
         subject: "",
-        message: ""
+        message: userInterestedText ?
+            userInterestedText === "basic" ? "I'd like to get started on the basic plan" : "I'd like to get started on the standard plan"
+            : ""
     }
 
+    console.log(`$initialFormObj`, initialFormObj);
     const [formObj, formObjSet] = useState<contactForm>({ ...initialFormObj })
+    console.log(`$formObj`, formObj);
 
     const [userInteracted, userInteractedSet] = useState(false)
 
@@ -116,7 +123,6 @@ export default function ContactForm() {
 
         let formBlank = false
         if (prevForm !== null) {
-            formObjSet(prevForm)
 
             const isBlank = Object.values(prevForm).filter(eachVal => eachVal !== "") as string[]
             if (isBlank.length === 0) {
@@ -124,6 +130,8 @@ export default function ContactForm() {
             }
 
             if (!formBlank) {
+                formObjSet(prevForm)
+
                 formObjErrorsSet(() => {
                     const newObj: { [key: string]: string[] | null } = {}
 

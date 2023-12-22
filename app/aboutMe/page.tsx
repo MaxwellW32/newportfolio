@@ -131,7 +131,7 @@ export default function Page() {
 
                             <p>Freelance, Online</p>
 
-                            <p>Completed Numerouse projects to bring my clients website ideas to life. From Wireframe to Code, to Powerful Web Apps.</p>
+                            <p>Completed Numerous projects to bring my clients website ideas to life. From Wireframe to Code, to Powerful Web Apps.</p>
                         </div>
                     </div>
 
@@ -159,7 +159,7 @@ export default function Page() {
 
                             <p>Ibex</p>
 
-                            <p>Was able to assist customers with creating their websites, along with recommend them the best products to help with site growth.</p>
+                            <p>Was able to assist customers with creating their websites, along with recommending them the best products to help with site growth.</p>
                         </div>
                     </div>
                 </div>

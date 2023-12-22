@@ -21,7 +21,7 @@ export default function Page() {
 
                         <p className='extraLargeText'>If you have any project or need help. Contact me</p>
 
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis, provident beatae. Vel repellendus quis qui, culpa exercitationem error voluptatem, atque accusantium praesentium ex itaque ab nam et laudantium vitae? Et?</p>
+                        <p>I&apos;m always here to help and will respond as quickly as possible.</p>
 
                         <ContactForm />
                     </div>

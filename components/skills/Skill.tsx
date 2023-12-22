@@ -14,7 +14,7 @@ export default function Skill({ title, amount, lineHeight = ".4rem" }: { title: 
             <p style={{ position: "absolute", top: "2rem", left: `calc(${amount} - 3rem)`, translate: "0% 0" }}>{amount}</p>
 
             <div style={{ height: lineHeight }}>
-                <div className={`${styles.progressBar} ${inView ? styles.animateIn : ""}`} style={{ backgroundColor: "#fff", height: "100%", width: amount, position: "relative" }}></div>
+                <div className={styles.progressBar} style={{ animationPlayState: inView ? "running" : "", backgroundColor: "#fff", height: "100%", width: amount, position: "relative" }}></div>
             </div>
         </div>
     )

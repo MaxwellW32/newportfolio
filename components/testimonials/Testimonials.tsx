@@ -2,6 +2,7 @@
 
 import React, { useState, useMemo, HTMLAttributes, useEffect } from 'react'
 import styles from "./testimonial.module.css"
+import { useInView } from 'react-intersection-observer'
 
 export default function Testimonials() {
     type testimonial = {
@@ -11,34 +12,7 @@ export default function Testimonials() {
         name: string
     }
 
-    // const testimonialArr: testimonial[] = [
-    //     {
-    //         text: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit assumenda voluptates dolorum beatae officia libero at nam veniam quos quis id eius, molestiae nihil incidunt optio, accusamus, consequatur unde ratione!",
-    //         rating: 5,
-    //         title: "0 CEO, Seoly",
-    //         name: "Raleigh Friend"
-    //     },
-    //     {
-    //         text: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit assumenda voluptates dolorum beatae officia libero at nam veniam quos quis id eius, molestiae nihil incidunt optio, accusamus, consequatur unde ratione!",
-    //         rating: 5,
-    //         title: "1 CEO, Seoly",
-    //         name: "Raleigh Friend"
-    //     },
-    //     {
-    //         text: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit assumenda voluptates dolorum beatae officia libero at nam veniam quos quis id eius, molestiae nihil incidunt optio, accusamus, consequatur unde ratione!",
-    //         rating: 5,
-    //         title: "2 CEO, Seoly",
-    //         name: "Raleigh Friend"
-    //     },
-    //     {
-    //         text: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit assumenda voluptates dolorum beatae officia libero at nam veniam quos quis id eius, molestiae nihil incidunt optio, accusamus, consequatur unde ratione!",
-    //         rating: 5,
-    //         title: "3 CEO, Seoly",
-    //         name: "Raleigh Friend"
-    //     },
-    // ]
-
-    const testimonialArr = [
+    const testimonialArr: testimonial[] = [
         {
             text: "Working with Maxwell was an absolute game-changer for our business! His expertise and dedication transformed our web presence. The attention to detail and commitment to delivering beyond our expectations truly set them apart. I highly recommend Maxwell for any web development project.",
             rating: 5,
@@ -64,7 +38,6 @@ export default function Testimonials() {
             name: "Alex Turner"
         },
     ];
-
 
     const [currentIndex, currentIndexSet] = useState(0)
 
@@ -123,9 +96,10 @@ export default function Testimonials() {
 
 
 function Testimonial({ text, rating, title, name, second }: { text: string, rating: number, title: string, name: string, second?: boolean }) {
+    const { ref, inView } = useInView()
 
     return (
-        <div className={styles.testimonial} style={{ padding: "3rem 2rem", display: "flex", flexDirection: "column", gap: "1rem", backgroundColor: "var(--backgroundColor)", animationDelay: second ? "400ms" : "" }}>
+        <div ref={ref} className={styles.testimonial} style={{ padding: "3rem 2rem", display: "flex", flexDirection: "column", gap: "1rem", backgroundColor: "var(--backgroundColor)", animationDelay: second ? "400ms" : "", animationPlayState: inView ? "running" : "" }}>
             <svg style={{ width: "4rem" }} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M0 216C0 149.7 53.7 96 120 96h8c17.7 0 32 14.3 32 32s-14.3 32-32 32h-8c-30.9 0-56 25.1-56 56v8h64c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V320 288 216zm256 0c0-66.3 53.7-120 120-120h8c17.7 0 32 14.3 32 32s-14.3 32-32 32h-8c-30.9 0-56 25.1-56 56v8h64c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64H320c-35.3 0-64-28.7-64-64V320 288 216z" /></svg>
 
             <p style={{ fontSize: "var(--mediumFontSize)" }}>{text}</p>

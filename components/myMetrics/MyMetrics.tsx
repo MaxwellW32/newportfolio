@@ -32,7 +32,7 @@ export default function MyMetrics({ svg, amount, amountAdd, text, animateTime = 
                 })
             }, timeLoop)
         } else {
-            animateAmountSet(0)
+            // animateAmountSet(0)
         }
     }, [inView])
 

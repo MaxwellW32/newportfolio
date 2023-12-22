@@ -1,5 +1,5 @@
 .testimonial {
-    animation: moveIn 1s both;
+    animation: moveIn 1s both paused;
 }
 
 

@@ -6,20 +6,19 @@
     padding: 2rem 3rem;
 }
 
-
 .progressBar {
     transform-origin: left;
-    transform: scaleX(0);
+    animation: animateIn 1s both paused;
 }
 
-.animateIn {
-    animation: animateIn 1s forwards;
-}
 
 @keyframes animateIn {
-    to {
-        transform: scaleX(1);
+    0% {
+        transform: scaleX(0);
+    }
 
+    100% {
+        transform: scaleX(1);
     }
 
 }

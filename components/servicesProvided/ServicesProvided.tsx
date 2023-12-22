@@ -1,12 +1,16 @@
+"use client"
+
 import React from 'react'
 import styles from "./servicesprovided.module.css"
 import Image from 'next/image'
+import { useInView } from 'react-intersection-observer'
 
 export default function ServicesProvided() {
+    const { ref, inView } = useInView()
 
     return (
-        <div className={styles.servicesMainDiv}>
-            <div>
+        <div ref={ref} className={styles.servicesMainDiv}>
+            <div style={{ animationPlayState: inView ? "running" : "", }}>
                 <Image alt='webdev service' width={400} height={400} style={{ aspectRatio: "1/1", width: "3rem" }} src={require(`@/public/dev.webp`).default.src} />
 
                 <h1>Web Development</h1>
@@ -26,7 +30,7 @@ export default function ServicesProvided() {
 
             </div>
 
-            <div>
+            <div style={{ animationPlayState: inView ? "running" : "", animationDelay: "150ms" }}>
                 <Image alt='UI/UX Design service' width={400} height={400} style={{ aspectRatio: "1/1", width: "3rem" }} src={require(`@/public/illustration.webp`).default.src} />
 
                 <h1>UI/UX Design Integration</h1>
@@ -43,7 +47,7 @@ export default function ServicesProvided() {
                 </ul>
             </div>
 
-            <div>
+            <div style={{ animationPlayState: inView ? "running" : "", animationDelay: "300ms" }} >
                 <Image alt='Backend service' width={400} height={400} style={{ aspectRatio: "1/1", width: "3rem" }} src={require(`@/public/uiux.webp`).default.src} />
 
                 <h1>Backend Development</h1>

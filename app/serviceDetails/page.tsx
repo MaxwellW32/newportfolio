@@ -104,11 +104,11 @@ export default function Page() {
                             </div>
                         </div>
 
-                        <p>In essence, when you choose my services, you're selecting a partner who not only possesses technical proficiency but is committed to understanding and realizing your distinct needs. I prioritize effective leadership, teamwork, adaptability, and a client-centric approach, ensuring that your project is not just a development endeavor but a collaborative journey towards success.</p>
+                        <p>In essence, when you choose my services, you&apos;re selecting a partner who not only possesses technical proficiency but is committed to understanding and realizing your distinct needs. I prioritize effective leadership, teamwork, adaptability, and a client-centric approach, ensuring that your project is not just a development endeavor but a collaborative journey towards success.</p>
 
                         <p className="extraLargeText">My Service Planning</p>
 
-                        <p>Welcome to our tailored service plans designed to meet your specific needs and propel your projects to new heights. We understand that each client is unique, and that's why we offer flexible plans to accommodate varying requirements. Whether you&apos;re launching a personal blog or a full-fledged business website, our plans are crafted to deliver exceptional value. Explore our offerings below and embark on a journey to digital excellence.</p>
+                        <p>Welcome to our tailored service plans designed to meet your specific needs and propel your projects to new heights. We understand that each client is unique, and that&apos;s why we offer flexible plans to accommodate varying requirements. Whether you&apos;re launching a personal blog or a full-fledged business website, our plans are crafted to deliver exceptional value. Explore our offerings below and embark on a journey to digital excellence.</p>
 
                         <div id='plan' className={styles.pricingCont}>
                             <div>

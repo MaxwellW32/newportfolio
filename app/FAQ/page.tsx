@@ -18,7 +18,7 @@ export default function Page() {
                         <div>
                             <p>How do I start a Web Development project with your services?</p>
 
-                            <p>Embarking on a Web Development project with our services is a straightforward process. Begin by selecting a plan that aligns with your project scope, whether it's the Basic or Standard plan. Upon choosing, our team will engage with you to understand your specific requirements, goals, and target audience. We&apos;ll guide you through the onboarding process, gather necessary information, and initiate the development phase. Throughout the project, we maintain transparent communication, provide regular updates, and ensure your vision is translated into a fully functional and visually appealing website.</p>
+                            <p>Embarking on a Web Development project with our services is a straightforward process. Begin by selecting a plan that aligns with your project scope, whether it&apos;s the Basic or Standard plan. Upon choosing, our team will engage with you to understand your specific requirements, goals, and target audience. We&apos;ll guide you through the onboarding process, gather necessary information, and initiate the development phase. Throughout the project, we maintain transparent communication, provide regular updates, and ensure your vision is translated into a fully functional and visually appealing website.</p>
                         </div>
                     </div>
 

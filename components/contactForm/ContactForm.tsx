@@ -35,9 +35,7 @@ export default function ContactForm() {
             : ""
     }
 
-    console.log(`$initialFormObj`, initialFormObj);
     const [formObj, formObjSet] = useState<contactForm>({ ...initialFormObj })
-    console.log(`$formObj`, formObj);
 
     const [userInteracted, userInteractedSet] = useState(false)
 

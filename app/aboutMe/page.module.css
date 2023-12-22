@@ -11,7 +11,7 @@
     flex-wrap: wrap;
     gap: 2rem;
     align-items: center;
-    color: #aaa;
+    color: rgba(255, 255, 255, 0.5);
 }
 
 .achievementsCont>div:first-of-type {

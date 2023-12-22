@@ -5,6 +5,7 @@ import styles from "./page.module.css"
 import MyMetrics from '@/components/myMetrics/MyMetrics'
 import Testimonials from '@/components/testimonials/Testimonials'
 import TrustedCompanies from '@/components/trustedCompanies/TrustedCompanies'
+import TextChanger from '@/components/textChanger/TextChanger'
 
 export default function Page() {
 
@@ -13,7 +14,7 @@ export default function Page() {
     return (
         <main>
             <section>
-                <p className='extraLargeText' style={{ textAlign: "center" }}>About Us</p>
+                <p className='extraLargeText' style={{ textAlign: "center" }}>About Me</p>
             </section>
 
             <section style={{ backgroundColor: "var(--backgroundColor)" }}>
@@ -21,9 +22,11 @@ export default function Page() {
                     <div style={{ flex: "999 1 400px" }}>
                         <p className='extraLargeText'>I&apos;m Maxwell Wedderburn</p>
 
-                        <p style={{ color: "#aaa", fontSize: "var(--largeFontSize)" }}>Fullstack Developer specializing in React</p>
+                        {/* <p style={{ color: "#aaa", fontSize: "var(--largeFontSize)" }}>Fullstack Developer specializing in React</p> */}
+                        <TextChanger />
 
-                        <p style={{ marginTop: "1rem" }}>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vero rerum minus velit enim ducimus quis, provident voluptas. Dolore accusamus temporibus officia nisi! Porro vitae consectetur quia dolores obcaecati optio labore?</p>
+
+                        <p style={{ marginTop: "1rem" }}>I love learning, and I have many app ideas that I want to bring to life. So I am always learning the newest technology, the best industry practises so I can bring these ideas to life, and use them to enrich my clients websites.</p>
                     </div>
 
                     <div style={{ flex: "1 1 400px", padding: "2rem", backgroundColor: "var(--primaryColor)", display: "grid", alignItems: "center", justifyItems: "center" }}>
@@ -47,57 +50,72 @@ export default function Page() {
                 <div style={{ display: selected === "education" ? "flex" : "none", flexDirection: "column", gap: "2rem" }}>
                     <div className={styles.achievementsCont}>
                         <div>
-                            <p>2009 - 2010</p>
+                            <p>2023 - 2024</p>
                         </div>
 
                         <div>
-                            <h1>Bachelor of Business Administration</h1>
+                            <h1>BSc. in Information and Communication Technology - Ongoing</h1>
 
-                            <p>University of California, Berkeley</p>
+                            <p>Vector Technology, Kingston</p>
 
-                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Unde alias impedit fuga odio aspernatur cum sint quisquam totam nulla, iste officia suscipit inventore, porro sit temporibus adipisci, dolorum saepe reprehenderit.</p>
-                        </div>
-                    </div>
-
-                    <div className={styles.achievementsCont}>
-                        <div>
-                            <p>2009 - 2010</p>
-                        </div>
-
-                        <div>
-                            <h1>Bachelor of Business Administration</h1>
-
-                            <p>University of California, Berkeley</p>
-
-                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Unde alias impedit fuga odio aspernatur cum sint quisquam totam nulla, iste officia suscipit inventore, porro sit temporibus adipisci, dolorum saepe reprehenderit.</p>
+                            <p>While this degree is in process, I am currently reinforcing my knowledge of the more advanced features in routing/networking that I covered as my time as a Systems Engineer.</p>
                         </div>
                     </div>
 
                     <div className={styles.achievementsCont}>
                         <div>
-                            <p>2009 - 2010</p>
+                            <p>2022 - 2023</p>
                         </div>
 
                         <div>
-                            <h1>Bachelor of Business Administration</h1>
+                            <h1>ASc. in Computer Systems Technology</h1>
 
-                            <p>University of California, Berkeley</p>
+                            <p>Vector Technology, Kingston</p>
 
-                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Unde alias impedit fuga odio aspernatur cum sint quisquam totam nulla, iste officia suscipit inventore, porro sit temporibus adipisci, dolorum saepe reprehenderit.</p>
+                            <p>Obtaining this degree at Vector, I learned basic computer hardware and network management.</p>
                         </div>
                     </div>
 
                     <div className={styles.achievementsCont}>
                         <div>
-                            <p>2009 - 2010</p>
+                            <p>2022 - 2022</p>
                         </div>
 
                         <div>
-                            <h1>Bachelor of Business Administration</h1>
+                            <h1>Meta Front-End Developer Certification</h1>
 
-                            <p>University of California, Berkeley</p>
+                            <p>Coursera, Online</p>
 
-                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Unde alias impedit fuga odio aspernatur cum sint quisquam totam nulla, iste officia suscipit inventore, porro sit temporibus adipisci, dolorum saepe reprehenderit.</p>
+                            <p>I was able to complete this full Coursera Certified Course, reinforcing my understanding of HTML, CSS, Javascript, UI/UX Design and React.</p>
+                        </div>
+                    </div>
+
+
+                    <div className={styles.achievementsCont}>
+                        <div>
+                            <p>2018 - 2019</p>
+                        </div>
+
+                        <div>
+                            <h1>CompTIA A+ Certification</h1>
+
+                            <p>CompTIA, Online</p>
+
+                            <p>I was able to complete the certification process for the CompTIA 220-901 and 220-902 exams. This certification has since expired, but I plan to renew it this upcoming year</p>
+                        </div>
+                    </div>
+
+                    <div className={styles.achievementsCont}>
+                        <div>
+                            <p>2012 - 2017</p>
+                        </div>
+
+                        <div>
+                            <h1>Diploma - 10 CXC Subjects</h1>
+
+                            <p>Wolmers&apos; Boy&apos;s School</p>
+
+                            <p>I was able to graduate wolmers obtaining: Information Technology, Physics, Chemistry, Biology, Engligh A, Engligh B, Mathematics, Additional Mathematics, Integrated Science and HSB</p>
                         </div>
                     </div>
                 </div>
@@ -105,43 +123,43 @@ export default function Page() {
                 <div style={{ display: selected === "experience" ? "flex" : "none", flexDirection: "column", gap: "2rem" }}>
                     <div className={styles.achievementsCont}>
                         <div>
-                            <p>2009 - 2010</p>
+                            <p>2020 - Ongoing</p>
                         </div>
 
                         <div>
-                            <h1>Web Designer</h1>
+                            <h1>Full Stack Web Developer</h1>
 
-                            <p>Graphic Dev</p>
+                            <p>Freelance, Online</p>
 
-                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Unde alias impedit fuga odio aspernatur cum sint quisquam totam nulla, iste officia suscipit inventore, porro sit temporibus adipisci, dolorum saepe reprehenderit.</p>
-                        </div>
-                    </div>
-
-                    <div className={styles.achievementsCont}>
-                        <div>
-                            <p>2009 - 2010</p>
-                        </div>
-
-                        <div>
-                            <h1>Junior Web Developer</h1>
-
-                            <p>Acme Lab</p>
-
-                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Unde alias impedit fuga odio aspernatur cum sint quisquam totam nulla, iste officia suscipit inventore, porro sit temporibus adipisci, dolorum saepe reprehenderit.</p>
+                            <p>Completed Numerouse projects to bring my clients website ideas to life. From Wireframe to Code, to Powerful Web Apps.</p>
                         </div>
                     </div>
 
                     <div className={styles.achievementsCont}>
                         <div>
-                            <p>2009 - 2010</p>
+                            <p>2022 - 2023</p>
                         </div>
 
                         <div>
-                            <h1>Senior Web Developer</h1>
+                            <h1>Systems Engineer</h1>
 
-                            <p>Devtwist</p>
+                            <p>Vertis Technology</p>
 
-                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Unde alias impedit fuga odio aspernatur cum sint quisquam totam nulla, iste officia suscipit inventore, porro sit temporibus adipisci, dolorum saepe reprehenderit.</p>
+                            <p>Provided end-user support and issue resolution through on-site visits, ensuring infrastructure updates and swift resolution of technical issues. </p>
+                        </div>
+                    </div>
+
+                    <div className={styles.achievementsCont}>
+                        <div>
+                            <p>2021 - 2022</p>
+                        </div>
+
+                        <div>
+                            <h1>GoDaddy - Consultative Sales Agent</h1>
+
+                            <p>Ibex</p>
+
+                            <p>Was able to assist customers with creating their websites, along with recommend them the best products to help with site growth.</p>
                         </div>
                     </div>
                 </div>

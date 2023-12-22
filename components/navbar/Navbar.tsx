@@ -26,8 +26,8 @@ export default function Navbar() {
             link: "/",
             subMenu: [
                 {
-                    title: "about us",
-                    link: "/aboutUs"
+                    title: "about me",
+                    link: "/aboutMe"
                 },
                 {
                     title: "FAQ",

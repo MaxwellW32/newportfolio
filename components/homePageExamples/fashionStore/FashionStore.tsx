@@ -2,6 +2,7 @@
 import { useEffect, useLayoutEffect, useRef } from 'react'
 import styles from './styles.module.css'
 import { Playfair_Display } from 'next/font/google'
+import Image from 'next/image'
 
 const playfair_display = Playfair_Display({
     subsets: ['latin'],
@@ -135,7 +136,7 @@ export default function FashionStore() {
         <div className={`${styles.artisticMainDiv} ${playfair_display.variable}`} style={{ backgroundColor: "#fff" }}>
             <nav style={{ background: "linear-gradient(to right, pink, #d48592)", display: "grid", gridTemplateColumns: "min(1020px, 100%)", justifyContent: "center", zIndex: "10", position: "relative" }}>
                 <div className={styles.transformTopDown} style={{ backgroundColor: "#fff", display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-around", padding: '.5rem 1rem', gap: "1rem" }}>
-                    <img style={{ height: "4rem" }} src={require("@/public/homePageExamples/fashionStore/artlogo.png").default.src} alt='logo' />
+                    <Image width={200} height={70} style={{ height: "4rem" }} src={require("@/public/homePageExamples/fashionStore/artlogo.png").default.src} alt='logo' />
 
                     <p style={{ color: "#cd7b86" }} className={styles.makeBold}>FREE INSURED SHIPPING ON ALL DOMESTIC U.S ORDERS!</p>
 
